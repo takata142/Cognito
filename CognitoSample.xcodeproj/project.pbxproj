@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15D7B85ABF796797BEE2E883 /* Pods_CognitoSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5202F2490F571A0F9E95D5FF /* Pods_CognitoSample.framework */; };
 		E50B88BF24274A0B002026FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88BE24274A0B002026FB /* AppDelegate.swift */; };
 		E50B88C124274A0B002026FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88C024274A0B002026FB /* SceneDelegate.swift */; };
 		E50B88C324274A0B002026FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88C224274A0B002026FB /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5202F2490F571A0F9E95D5FF /* Pods_CognitoSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognitoSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64CC8E99695808BD16F96250 /* Pods-CognitoSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoSample.release.xcconfig"; path = "Target Support Files/Pods-CognitoSample/Pods-CognitoSample.release.xcconfig"; sourceTree = "<group>"; };
+		D4F1E2D3C6F6455993255769 /* Pods-CognitoSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoSample.debug.xcconfig"; path = "Target Support Files/Pods-CognitoSample/Pods-CognitoSample.debug.xcconfig"; sourceTree = "<group>"; };
 		E50B88BB24274A0B002026FB /* CognitoSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognitoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50B88BE24274A0B002026FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E50B88C024274A0B002026FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15D7B85ABF796797BEE2E883 /* Pods_CognitoSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62B64E3A5D66488C54675C33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5202F2490F571A0F9E95D5FF /* Pods_CognitoSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		729C6591A3C51F4BD17963B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4F1E2D3C6F6455993255769 /* Pods-CognitoSample.debug.xcconfig */,
+				64CC8E99695808BD16F96250 /* Pods-CognitoSample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E50B88B224274A0B002026FB = {
 			isa = PBXGroup;
 			children = (
 				E50B88BD24274A0B002026FB /* CognitoSample */,
 				E50B88BC24274A0B002026FB /* Products */,
+				729C6591A3C51F4BD17963B2 /* Pods */,
+				62B64E3A5D66488C54675C33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E50B88CF24274A0D002026FB /* Build configuration list for PBXNativeTarget "CognitoSample" */;
 			buildPhases = (
+				126A9FBFF05A634E325AEC51 /* [CP] Check Pods Manifest.lock */,
 				E50B88B724274A0B002026FB /* Sources */,
 				E50B88B824274A0B002026FB /* Frameworks */,
 				E50B88B924274A0B002026FB /* Resources */,
+				A15EB0CD095C239E7A6397E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		126A9FBFF05A634E325AEC51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CognitoSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A15EB0CD095C239E7A6397E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CognitoSample/Pods-CognitoSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CognitoSample/Pods-CognitoSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CognitoSample/Pods-CognitoSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E50B88B724274A0B002026FB /* Sources */ = {
@@ -282,6 +350,7 @@
 		};
 		E50B88D024274A0D002026FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4F1E2D3C6F6455993255769 /* Pods-CognitoSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +368,7 @@
 		};
 		E50B88D124274A0D002026FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64CC8E99695808BD16F96250 /* Pods-CognitoSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
