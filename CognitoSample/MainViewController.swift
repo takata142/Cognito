@@ -10,11 +10,16 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    /// view がメモリにロードされた後に呼ばれる.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    /// 「サインイン」ボタンを押した時の処理.
+    @IBAction func pushedSignIn(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "SignIn", sender: nil)
+    }
+    
 }
 
