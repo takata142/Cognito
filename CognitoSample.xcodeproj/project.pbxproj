@@ -16,6 +16,7 @@
 		E50B88CB24274A0D002026FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50B88C924274A0D002026FB /* LaunchScreen.storyboard */; };
 		E50B88D924274E6A002026FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E50B88D824274E6A002026FB /* README.md */; };
 		E50B88DB24274E77002026FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E50B88DA24274E77002026FB /* .gitignore */; };
+		E50B88DD24275655002026FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88DC24275655002026FB /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E50B88CC24274A0D002026FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E50B88D824274E6A002026FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E50B88DA24274E77002026FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E50B88DC24275655002026FB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				E50B88BE24274A0B002026FB /* AppDelegate.swift */,
 				E50B88C024274A0B002026FB /* SceneDelegate.swift */,
 				E50B88C224274A0B002026FB /* MainViewController.swift */,
+				E50B88DC24275655002026FB /* SignInViewController.swift */,
 				E50B88C424274A0B002026FB /* Main.storyboard */,
 				E50B88C724274A0D002026FB /* Assets.xcassets */,
 				E50B88C924274A0D002026FB /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E50B88DD24275655002026FB /* SignInViewController.swift in Sources */,
 				E50B88C324274A0B002026FB /* MainViewController.swift in Sources */,
 				E50B88BF24274A0B002026FB /* AppDelegate.swift in Sources */,
 				E50B88C124274A0B002026FB /* SceneDelegate.swift in Sources */,

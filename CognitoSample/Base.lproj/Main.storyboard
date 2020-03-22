@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="T7n-lu-uDt">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="2ph-Lk-jDg" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="2ph-Lk-jDg" customClass="SignInViewController" customModule="CognitoSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEF-BW-Q5b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +71,9 @@
                                 <rect key="frame" x="126" y="493" width="162" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="サインイン"/>
+                                <connections>
+                                    <action selector="signIn:" destination="2ph-Lk-jDg" eventType="touchUpInside" id="X5Q-fA-eFG"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーネーム" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-aC-h9c">
                                 <rect key="frame" x="16" y="369" width="382" height="42"/>
@@ -108,6 +111,11 @@
                         <viewLayoutGuide key="safeArea" id="60F-QY-kpd"/>
                     </view>
                     <navigationItem key="navigationItem" id="ULt-mr-2xS"/>
+                    <connections>
+                        <outlet property="passwordField" destination="sBx-aq-NTF" id="yAW-bY-zwc"/>
+                        <outlet property="signInButton" destination="22A-QB-Hbd" id="6cj-0e-RcY"/>
+                        <outlet property="usernameField" destination="aKF-aC-h9c" id="VWr-Zy-8MY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IH-uv-LaP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
