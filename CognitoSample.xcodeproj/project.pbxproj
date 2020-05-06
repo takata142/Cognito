@@ -18,6 +18,7 @@
 		E50B88DB24274E77002026FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E50B88DA24274E77002026FB /* .gitignore */; };
 		E50B88DD24275655002026FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88DC24275655002026FB /* SignInViewController.swift */; };
 		E50B88DF24275856002026FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88DE24275856002026FB /* SignUpViewController.swift */; };
+		E5AC19522463067900738698 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AC19512463067900738698 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E50B88DA24274E77002026FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E50B88DC24275655002026FB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E50B88DE24275856002026FB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E5AC19512463067900738698 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				E50B88BE24274A0B002026FB /* AppDelegate.swift */,
+				E5AC19512463067900738698 /* Constants.swift */,
 				E50B88C024274A0B002026FB /* SceneDelegate.swift */,
 				E50B88C224274A0B002026FB /* MainViewController.swift */,
 				E50B88DC24275655002026FB /* SignInViewController.swift */,
@@ -225,6 +228,7 @@
 				E50B88BF24274A0B002026FB /* AppDelegate.swift in Sources */,
 				E50B88C124274A0B002026FB /* SceneDelegate.swift in Sources */,
 				E50B88DF24275856002026FB /* SignUpViewController.swift in Sources */,
+				E5AC19522463067900738698 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
