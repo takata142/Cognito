@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15D7B85ABF796797BEE2E883 /* Pods_CognitoSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5202F2490F571A0F9E95D5FF /* Pods_CognitoSample.framework */; };
+		E5088A0424643E6600ECA72D /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5088A0324643E6600ECA72D /* ConfirmationViewController.swift */; };
 		E50B88BF24274A0B002026FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88BE24274A0B002026FB /* AppDelegate.swift */; };
 		E50B88C124274A0B002026FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88C024274A0B002026FB /* SceneDelegate.swift */; };
 		E50B88C324274A0B002026FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B88C224274A0B002026FB /* MainViewController.swift */; };
@@ -25,6 +26,7 @@
 		5202F2490F571A0F9E95D5FF /* Pods_CognitoSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognitoSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CC8E99695808BD16F96250 /* Pods-CognitoSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoSample.release.xcconfig"; path = "Target Support Files/Pods-CognitoSample/Pods-CognitoSample.release.xcconfig"; sourceTree = "<group>"; };
 		D4F1E2D3C6F6455993255769 /* Pods-CognitoSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoSample.debug.xcconfig"; path = "Target Support Files/Pods-CognitoSample/Pods-CognitoSample.debug.xcconfig"; sourceTree = "<group>"; };
+		E5088A0324643E6600ECA72D /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		E50B88BB24274A0B002026FB /* CognitoSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognitoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50B88BE24274A0B002026FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E50B88C024274A0B002026FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				E50B88C224274A0B002026FB /* MainViewController.swift */,
 				E50B88DC24275655002026FB /* SignInViewController.swift */,
 				E50B88DE24275856002026FB /* SignUpViewController.swift */,
+				E5088A0324643E6600ECA72D /* ConfirmationViewController.swift */,
 				E50B88C424274A0B002026FB /* Main.storyboard */,
 				E50B88C724274A0D002026FB /* Assets.xcassets */,
 				E50B88C924274A0D002026FB /* LaunchScreen.storyboard */,
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5088A0424643E6600ECA72D /* ConfirmationViewController.swift in Sources */,
 				E50B88DD24275655002026FB /* SignInViewController.swift in Sources */,
 				E50B88C324274A0B002026FB /* MainViewController.swift in Sources */,
 				E50B88BF24274A0B002026FB /* AppDelegate.swift in Sources */,
