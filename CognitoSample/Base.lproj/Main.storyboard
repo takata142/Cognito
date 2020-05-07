@@ -33,13 +33,23 @@
                                     <action selector="pushedSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vN1-7z-oqe"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7M-L4-xcL">
+                                <rect key="frame" x="86" y="558" width="242" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="サインアウト"/>
+                                <connections>
+                                    <action selector="pushedSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Emb-qg-YXf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="top" secondItem="U9K-Ix-ce3" secondAttribute="bottom" constant="80" id="3kK-RW-zSF"/>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8VX-e1-qPG"/>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpJ-qe-I2j"/>
+                            <constraint firstItem="l7M-L4-xcL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0z-0F-Gbe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U9K-Ix-ce3" secondAttribute="trailing" constant="20" id="PWx-GR-hWJ"/>
+                            <constraint firstItem="l7M-L4-xcL" firstAttribute="top" secondItem="xhL-qD-g80" secondAttribute="bottom" constant="80" id="Ukc-Wf-3Sc"/>
                             <constraint firstItem="U9K-Ix-ce3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xsq-D7-6Bg"/>
                             <constraint firstItem="U9K-Ix-ce3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YIB-bZ-BnN"/>
                         </constraints>
@@ -47,6 +57,7 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="xhL-qD-g80" id="JXq-Kf-s6c"/>
+                        <outlet property="signOutButton" destination="l7M-L4-xcL" id="EhG-fS-maP"/>
                         <segue destination="CiF-pu-Diq" kind="presentation" identifier="SignIn" id="Rgf-HY-AiZ"/>
                     </connections>
                 </viewController>
