@@ -6,6 +6,7 @@
 //  Copyright © 2020 Yuto Iwata. All rights reserved.
 //
 
+import AWSCognitoIdentityProvider
 import UIKit
 
 @UIApplicationMain
@@ -15,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // AWS サービス設定を作成.
+        let serviceConfiguration: AWSServiceConfiguration = AWSServiceConfiguration(
+            region: CognitoConstants.IdentityUserPoolRegion,
+            credentialsProvider: nil
+        )
+        /// ユーザプール設定を作成.
+        let userPoolConfigration: AWSCognitoIdentityUserPoolConfiguration =
+            AWSCognitoIdentityUserPoolConfiguration(clientId: CognitoConstants.AppClientId,
+                                                    clientSecret: CognitoConstants.AppClientSecret,
+                                                    poolId: CognitoConstants.IdentityUserPoolId)
+        /// ユーザープールクライアントを初期化.
+        AWSCognitoIdentityUserPool.register(with: serviceConfiguration,
+                                            userPoolConfiguration: userPoolConfigration,
+                                            forKey: CognitoConstants.SignInProviderKey)
+        
         return true
     }
 
