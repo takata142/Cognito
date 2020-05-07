@@ -17,8 +17,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     /// パスワード入力用 TextField.
     @IBOutlet weak var passwordField: UITextField!
-    /// 「サインイン」ボタン.
-    @IBOutlet weak var signInButton: UIButton!
     
     /// サインアップする.
     @IBAction func signUp(_ sender: UIButton) {
