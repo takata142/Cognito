@@ -32,19 +32,21 @@ class SignUpViewController: UIViewController {
         let attributes: [AWSCognitoIdentityUserAttributeType] = [name, emailAttribute]
         let pool: AWSCognitoIdentityUserPool = AWSCognitoIdentityUserPool(forKey: CognitoConstants.SignInProviderKey)
         pool.signUp(username, password: password, userAttributes: attributes, validationData: nil).continueWith { task in
-            if let error: NSError = task.error as NSError? {
-                self.presentErrorAlert(title: error.userInfo["__type"] as? String,
-                                       message: error.userInfo["message"] as? String)
-            } else {
-                if let result: AWSCognitoIdentityUserPoolSignUpResponse = task.result {
-                    // ユーザがメールやSMSでの認証を必要とするかどうかで処理を分ける.
-                    if (result.user.confirmedStatus != .confirmed) {
-//                        self.useCaseOutput?.needConfirmSignUp(username: username,
-//                                                              sentTo: result.codeDeliveryDetails?.destination,
-//                                                              password: password)
-                    } else {
-                        // 確認コード認証が不要な場合は自動でサインインを試みる.
-//                        self.signIn(username: username, password: password)
+            DispatchQueue.main.async {
+                if let error: NSError = task.error as NSError? {
+                    self.presentErrorAlert(title: error.userInfo["__type"] as? String,
+                                           message: error.userInfo["message"] as? String)
+                } else {
+                    if let result: AWSCognitoIdentityUserPoolSignUpResponse = task.result {
+                        // ユーザがメールやSMSでの認証を必要とするかどうかで処理を分ける.
+                        if (result.user.confirmedStatus != .confirmed) {
+                            self.performSegue(withIdentifier: "ConfirmSignUp", sender: [username,
+                                                                                        result.codeDeliveryDetails?.destination,
+                                                                                        password])
+                        } else {
+                            // 確認コード認証が不要な場合は自動でサインインを試みる.
+//                            self.signIn(username: username, password: password)
+                        }
                     }
                 }
             }
