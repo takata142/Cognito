@@ -15,8 +15,6 @@ class ConfirmationViewController: UIViewController {
     @IBOutlet weak var instructionLabel: UILabel!
     /// 確認コード入力用 TextField.
     @IBOutlet weak var confirmationCodeField: UITextField!
-    /// 「確認コードで認証」ボタン.
-    @IBOutlet weak var confirmButton: UIButton!
     /// 確認コード認証中の処理を表す Activity Indicator.
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     /// SignUpViewController から渡されるユーザ名.
@@ -59,12 +57,12 @@ class ConfirmationViewController: UIViewController {
                             self.presentErrorAlert(title: "確認コードでの認証ができませんでした。",
                                                    message: error.userInfo["message"] as? String)
                             self.indicatorView.stopAnimating()
-                            self.confirmButton.isEnabled = true
+                            sender.isEnabled = true
                         }
                     } else {
                         DispatchQueue.main.async {
                             self.indicatorView.stopAnimating()
-                            self.confirmButton.isEnabled = true
+                            sender.isEnabled = true
                             self.dismiss(animated: true, completion: nil)
                         }
                     }

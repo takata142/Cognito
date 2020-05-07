@@ -260,8 +260,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="確認コードで認証"/>
                                 <connections>
-                                    <action selector="confirmWithSender:" destination="9me-Fu-Kxx" eventType="touchUpInside" id="KQH-nI-6JB"/>
-                                    <action selector="signUp:" destination="9me-Fu-Kxx" eventType="touchUpInside" id="dlT-WM-q9A"/>
+                                    <action selector="confirmWithSender:" destination="9me-Fu-Kxx" eventType="touchUpInside" id="xXn-6p-Xpl"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="確認コード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-Iw-OD3">
@@ -312,7 +311,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="確認コード" id="ZV2-Fr-qFg"/>
                     <connections>
-                        <outlet property="confirmButton" destination="EtT-jB-ade" id="3gh-Dj-7oB"/>
                         <outlet property="confirmationCodeField" destination="pLd-Iw-OD3" id="x4a-sD-0T4"/>
                         <outlet property="indicatorView" destination="aar-AO-LIt" id="HOq-CR-I9S"/>
                         <outlet property="instructionLabel" destination="j3p-wK-VgR" id="2Bq-Oe-WsP"/>
