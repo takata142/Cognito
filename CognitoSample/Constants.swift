@@ -18,8 +18,8 @@ struct CognitoConstants {
     static let AppClientId: String = "YourAppClientId"
     /// アプリクライアントのシークレットキー.
     static let AppClientSecret: String? = nil
-    static let SignInProviderKey: String = "YourSignInProviderKey"
-    static let IdentityPoolId: String = "YourIdentityPoolId"
+    /// プロバイダキー. "UserPool" で良さそう.
+    static let SignInProviderKey: String = "UserPool"
     
     /// インスタンス生成禁止.
     private init() {}
