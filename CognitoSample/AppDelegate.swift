@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             region: CognitoConstants.IdentityUserPoolRegion,
             credentialsProvider: nil
         )
-        /// ユーザプール設定を作成.
+        // ユーザプール設定を作成.
         let userPoolConfigration: AWSCognitoIdentityUserPoolConfiguration =
             AWSCognitoIdentityUserPoolConfiguration(clientId: CognitoConstants.AppClientId,
                                                     clientSecret: CognitoConstants.AppClientSecret,
                                                     poolId: CognitoConstants.IdentityUserPoolId)
-        /// ユーザープールクライアントを初期化.
+        // ユーザープールクライアントを初期化.
         AWSCognitoIdentityUserPool.register(with: serviceConfiguration,
                                             userPoolConfiguration: userPoolConfigration,
                                             forKey: CognitoConstants.SignInProviderKey)
