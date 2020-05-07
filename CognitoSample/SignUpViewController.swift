@@ -30,6 +30,18 @@ class SignUpViewController: UIViewController {
         self.passwordField.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ConfirmSignUp" {
+            let destination: ConfirmationViewController? = segue.destination as? ConfirmationViewController
+            if let array: [String?] = sender as? [String?] {
+                // ConfirmationViewController に値を渡す.
+                destination?.setUser(array[0]!)
+                destination?.sentTo = array[1]
+                destination?.setPassword(array[2]!)
+            }
+        }
+    }
+    
     /// サインアップする.
     @IBAction func signUp(_ sender: UIButton) {
         guard let username: String = self.usernameField.text,
@@ -56,8 +68,8 @@ class SignUpViewController: UIViewController {
                                                                                         result.codeDeliveryDetails?.destination,
                                                                                         password])
                         } else {
-                            // 確認コード認証が不要な場合は自動でサインインを試みる.
-//                            self.signIn(username: username, password: password)
+                            // 確認コード認証が不要な場合は NavigationView を閉じる.
+                            self.dismiss(animated: true, completion: nil)
                         }
                     }
                 }

@@ -56,23 +56,19 @@ class ConfirmationViewController: UIViewController {
                 let pool: AWSCognitoIdentityUserPool = AWSCognitoIdentityUserPool(forKey: CognitoConstants.SignInProviderKey)
                 let user: AWSCognitoIdentityUser = pool.getUser(self.username!)
                 user.confirmSignUp(code).continueWith { task in
-                    if let error: Error = task.error {
-                        print("Confirmation failed.")
-                        print(error)
+                    if let error: NSError = task.error as NSError? {
                         DispatchQueue.main.async {
+                            self.presentErrorAlert(title: "確認コードでの認証ができませんでした。",
+                                                   message: error.userInfo["message"] as? String)
                             self.indicatorView.stopAnimating()
                             self.confirmButton.isEnabled = true
                         }
                     } else {
-                        print("Confirmation succeeded.")
                         DispatchQueue.main.async {
                             self.indicatorView.stopAnimating()
                             self.confirmButton.isEnabled = true
+                            self.dismiss(animated: true, completion: nil)
                         }
-                        // 自動でサインインを試みる.
-//                        if self.receivedPassword != nil {
-//                            self.signIn(username: username, password: self.receivedPassword!)
-//                        }
                     }
                     return task
                 }
@@ -86,6 +82,20 @@ class ConfirmationViewController: UIViewController {
         if (self.confirmationCodeField.isFirstResponder) {
             self.confirmationCodeField.resignFirstResponder()
         }
+    }
+    
+    /// ユーザ名を設定する.
+    /// - Parameter username: 設定するユーザ名.
+    func setUser(_ username: String) {
+        // すでに設定されている場合は上書きしない.
+        self.username = self.username ?? username
+    }
+    
+    /// パスワードを設定する.
+    /// - Parameter password: 設定するパスワード
+    func setPassword(_ password: String) {
+        // すでに設定されている場合は上書きしない.
+        self.receivedPassword = self.receivedPassword ?? password
     }
     
     /// エラーを示すアラートを表示する.
