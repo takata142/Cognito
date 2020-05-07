@@ -18,6 +18,17 @@ class SignInViewController: UIViewController {
     /// 「サインイン」ボタン.
     @IBOutlet weak var signInButton: UIButton!
     
+    /// view がメモリにロードされた後に呼ばれる.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /// 画面タップ時の処理.
+        let tapRecognizer: UITapGestureRecognizer
+            = UITapGestureRecognizer(target: self, action: #selector(self.closeKeyboard(_:)))
+        self.view.addGestureRecognizer(tapRecognizer)
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
+    }
+    
     /// サインインする.
     @IBAction func signIn(_ sender: UIButton) {
         guard let username: String = self.usernameField.text,
@@ -46,6 +57,16 @@ class SignInViewController: UIViewController {
         self.performSegue(withIdentifier: "SignUp", sender: nil)
     }
     
+    /// 画面タップ時の処理.
+    @objc func closeKeyboard(_ sender: UITapGestureRecognizer) {
+        // TextField 編集中の場合はキーボードを閉じる.
+        if (self.usernameField.isFirstResponder) {
+            self.usernameField.resignFirstResponder()
+        } else if (self.passwordField.isFirstResponder) {
+            self.passwordField.resignFirstResponder()
+        }
+    }
+    
     /// エラーを示すアラートを表示する.
     /// - Parameters:
     ///   - title:   アラートのタイトル.
@@ -58,5 +79,20 @@ class SignInViewController: UIViewController {
         // アラートに「OK」ボタンを追加.
         errorAlert.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(errorAlert, animated: true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension SignInViewController: UITextFieldDelegate {
+    /// 編集中に Return ボタンが押された時の処理.
+    /// - Parameter textField: Return ボタンが押された UITextField.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        // 次のタグ番号を持っている UITextField があればフォーカス.
+        let nextTag: Int = textField.tag + 1
+        if let nextTextField: UITextField = self.view.viewWithTag(nextTag) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        }
+        return true
     }
 }
