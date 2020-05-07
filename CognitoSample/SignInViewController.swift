@@ -32,7 +32,7 @@ class SignInViewController: UIViewController {
             DispatchQueue.main.async {
                 if let error: NSError = task.error as NSError? {
                     self.presentErrorAlert(title: error.userInfo["__type"] as? String,
-                    message: error.userInfo["message"] as? String)
+                                           message: error.userInfo["message"] as? String)
                 } else {
                     self.dismiss(animated: true, completion: nil)
                 }
