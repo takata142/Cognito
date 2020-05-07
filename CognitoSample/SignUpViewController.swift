@@ -17,6 +17,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     /// パスワード入力用 TextField.
     @IBOutlet weak var passwordField: UITextField!
+    /// サインアップ中の処理を表す Activity Indicator.
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     /// view がメモリにロードされた後に呼ばれる.
     override func viewDidLoad() {
@@ -28,6 +30,9 @@ class SignUpViewController: UIViewController {
         self.usernameField.delegate = self
         self.emailField.delegate = self
         self.passwordField.delegate = self
+        if #available(iOS 13.0, *) {
+            self.indicatorView.style = .large
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,6 +56,8 @@ class SignUpViewController: UIViewController {
                 self.presentErrorAlert(title: "ユーザ名、メールアドレスまたはパスワードが入力されていません。", message: nil)
                 return
         }
+        self.indicatorView.startAnimating()
+        sender.isEnabled = false
         let name: AWSCognitoIdentityUserAttributeType = AWSCognitoIdentityUserAttributeType(name: "name", value: username)
         let emailAttribute: AWSCognitoIdentityUserAttributeType = AWSCognitoIdentityUserAttributeType(name: "email", value: email)
         let attributes: [AWSCognitoIdentityUserAttributeType] = [name, emailAttribute]
@@ -60,8 +67,12 @@ class SignUpViewController: UIViewController {
                 if let error: NSError = task.error as NSError? {
                     self.presentErrorAlert(title: error.userInfo["__type"] as? String,
                                            message: error.userInfo["message"] as? String)
+                    self.indicatorView.stopAnimating()
+                    sender.isEnabled = true
                 } else {
                     if let result: AWSCognitoIdentityUserPoolSignUpResponse = task.result {
+                        self.indicatorView.stopAnimating()
+                        sender.isEnabled = true
                         // ユーザがメールやSMSでの認証を必要とするかどうかで処理を分ける.
                         if (result.user.confirmedStatus != .confirmed) {
                             self.performSegue(withIdentifier: "ConfirmSignUp", sender: [username,

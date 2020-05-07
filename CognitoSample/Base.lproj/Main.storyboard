@@ -115,16 +115,21 @@
                                     <action selector="pushedSignUp:" destination="2ph-Lk-jDg" eventType="touchUpInside" id="i9h-R8-ZAh"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-7T-8es">
+                                <rect key="frame" x="308" y="508.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="XpN-AO-QxS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="60F-QY-kpd" secondAttribute="leading" constant="20" id="1xX-6v-dLG"/>
+                            <constraint firstItem="rMz-7T-8es" firstAttribute="centerY" secondItem="22A-QB-Hbd" secondAttribute="centerY" id="2uv-Vr-HVg"/>
                             <constraint firstItem="XpN-AO-QxS" firstAttribute="width" secondItem="XpN-AO-QxS" secondAttribute="height" multiplier="163:29" id="6we-bi-4wh"/>
                             <constraint firstItem="60F-QY-kpd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NRV-1w-Dna" secondAttribute="trailing" constant="10" id="7b5-3Y-9Eo"/>
                             <constraint firstItem="sBx-aq-NTF" firstAttribute="top" secondItem="aKF-aC-h9c" secondAttribute="bottom" constant="16" id="7pL-zz-GKX"/>
                             <constraint firstItem="aKF-aC-h9c" firstAttribute="leading" secondItem="60F-QY-kpd" secondAttribute="leading" constant="16" id="LJI-ll-d2Z"/>
                             <constraint firstItem="NRV-1w-Dna" firstAttribute="top" secondItem="22A-QB-Hbd" secondAttribute="bottom" constant="20" id="MzM-UD-EFR"/>
                             <constraint firstItem="sBx-aq-NTF" firstAttribute="leading" secondItem="aKF-aC-h9c" secondAttribute="leading" id="Qv7-6W-oQG"/>
+                            <constraint firstItem="rMz-7T-8es" firstAttribute="leading" secondItem="22A-QB-Hbd" secondAttribute="trailing" constant="20" id="Rcd-As-Eyz"/>
                             <constraint firstItem="22A-QB-Hbd" firstAttribute="top" secondItem="sBx-aq-NTF" secondAttribute="bottom" constant="24" id="SMn-HC-Tcp"/>
                             <constraint firstItem="XpN-AO-QxS" firstAttribute="centerX" secondItem="CEF-BW-Q5b" secondAttribute="centerX" id="WTm-eX-3TU"/>
                             <constraint firstItem="22A-QB-Hbd" firstAttribute="centerX" secondItem="CEF-BW-Q5b" secondAttribute="centerX" id="XqB-jb-ZIJ"/>
@@ -140,8 +145,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="サインイン" id="ULt-mr-2xS"/>
                     <connections>
+                        <outlet property="indicatorView" destination="rMz-7T-8es" id="ovg-5V-rWi"/>
                         <outlet property="passwordField" destination="sBx-aq-NTF" id="yAW-bY-zwc"/>
-                        <outlet property="signInButton" destination="22A-QB-Hbd" id="6cj-0e-RcY"/>
                         <outlet property="usernameField" destination="aKF-aC-h9c" id="VWr-Zy-8MY"/>
                         <segue destination="Xgo-2H-zNL" kind="show" identifier="SignUp" id="YUL-TC-IkW"/>
                     </connections>
@@ -196,15 +201,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-33-ypB">
+                                <rect key="frame" x="197" y="564" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="wNx-33-ypB" firstAttribute="top" secondItem="O2A-xb-oJe" secondAttribute="bottom" constant="20" id="3T0-Nl-1ox"/>
                             <constraint firstItem="Bah-g4-RAw" firstAttribute="trailing" secondItem="gs6-Kd-Jns" secondAttribute="trailing" id="A8t-M1-JrU"/>
                             <constraint firstItem="gs6-Kd-Jns" firstAttribute="top" secondItem="WKa-Iy-qd3" secondAttribute="bottom" constant="40" id="DaJ-Ba-QrT"/>
                             <constraint firstItem="WKa-Iy-qd3" firstAttribute="width" secondItem="WKa-Iy-qd3" secondAttribute="height" multiplier="163:29" id="Fzf-BW-FWr"/>
                             <constraint firstItem="K65-Yy-fOJ" firstAttribute="trailing" secondItem="gs6-Kd-Jns" secondAttribute="trailing" id="Geo-5d-Ouz"/>
                             <constraint firstItem="WKa-Iy-qd3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kXT-EL-fcD" secondAttribute="leading" constant="20" id="LRV-BS-9BP"/>
                             <constraint firstItem="Bah-g4-RAw" firstAttribute="leading" secondItem="gs6-Kd-Jns" secondAttribute="leading" id="SkE-BF-GeB"/>
+                            <constraint firstItem="wNx-33-ypB" firstAttribute="centerX" secondItem="PiY-r4-MAC" secondAttribute="centerX" id="TfL-Z1-4wM"/>
                             <constraint firstItem="O2A-xb-oJe" firstAttribute="top" secondItem="K65-Yy-fOJ" secondAttribute="bottom" constant="24" id="U1N-ZP-nAz"/>
                             <constraint firstItem="K65-Yy-fOJ" firstAttribute="leading" secondItem="gs6-Kd-Jns" secondAttribute="leading" id="Xt6-Fl-7VS"/>
                             <constraint firstItem="kXT-EL-fcD" firstAttribute="trailing" secondItem="gs6-Kd-Jns" secondAttribute="trailing" constant="16" id="b3S-DD-jZW"/>
@@ -221,6 +231,7 @@
                     <navigationItem key="navigationItem" title="新規アカウント" id="jRw-jR-GoO"/>
                     <connections>
                         <outlet property="emailField" destination="Bah-g4-RAw" id="3eX-dg-cGd"/>
+                        <outlet property="indicatorView" destination="wNx-33-ypB" id="n31-Xn-fbd"/>
                         <outlet property="passwordField" destination="K65-Yy-fOJ" id="pMG-Cm-NAc"/>
                         <outlet property="usernameField" destination="gs6-Kd-Jns" id="re9-Ea-2Bb"/>
                         <segue destination="9me-Fu-Kxx" kind="show" identifier="ConfirmSignUp" id="kvb-2S-a90"/>

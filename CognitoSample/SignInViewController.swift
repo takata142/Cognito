@@ -15,8 +15,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     /// パスワード入力用 TextField.
     @IBOutlet weak var passwordField: UITextField!
-    /// 「サインイン」ボタン.
-    @IBOutlet weak var signInButton: UIButton!
+    /// サインイン中の処理を表す Activity Indicator.
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     /// view がメモリにロードされた後に呼ばれる.
     override func viewDidLoad() {
@@ -27,6 +27,9 @@ class SignInViewController: UIViewController {
         self.view.addGestureRecognizer(tapRecognizer)
         self.usernameField.delegate = self
         self.passwordField.delegate = self
+        if #available(iOS 13.0, *) {
+            self.indicatorView.style = .large
+        }
     }
     
     /// サインインする.
@@ -36,11 +39,14 @@ class SignInViewController: UIViewController {
                 self.presentErrorAlert(title: "ユーザ名またはパスワードが入力されていません。", message: nil)
                 return
         }
-        print(username)
+        self.indicatorView.startAnimating()
+        sender.isEnabled = false
         let pool: AWSCognitoIdentityUserPool = AWSCognitoIdentityUserPool(forKey: CognitoConstants.SignInProviderKey)
         let user: AWSCognitoIdentityUser = pool.getUser(username)
         user.getSession(username, password: password, validationData: nil).continueWith { task in
             DispatchQueue.main.async {
+                self.indicatorView.stopAnimating()
+                sender.isEnabled = true
                 if let error: NSError = task.error as NSError? {
                     self.presentErrorAlert(title: error.userInfo["__type"] as? String,
                                            message: error.userInfo["message"] as? String)
