@@ -18,6 +18,18 @@ class SignUpViewController: UIViewController {
     /// パスワード入力用 TextField.
     @IBOutlet weak var passwordField: UITextField!
     
+    /// view がメモリにロードされた後に呼ばれる.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /// 画面タップ時の処理.
+        let tapRecognizer: UITapGestureRecognizer
+            = UITapGestureRecognizer(target: self, action: #selector(self.closeKeyboard(_:)))
+        self.view.addGestureRecognizer(tapRecognizer)
+        self.usernameField.delegate = self
+        self.emailField.delegate = self
+        self.passwordField.delegate = self
+    }
+    
     /// サインアップする.
     @IBAction func signUp(_ sender: UIButton) {
         guard let username: String = self.usernameField.text,
@@ -54,6 +66,18 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    /// 画面タップ時の動作.
+    @objc func closeKeyboard(_ sender: UITapGestureRecognizer) {
+        // TextField 編集中の場合はキーボードを閉じる.
+        if (self.usernameField.isFirstResponder) {
+            self.usernameField.resignFirstResponder()
+        } else if (self.emailField.isFirstResponder) {
+            self.emailField.resignFirstResponder()
+        } else if (self.passwordField.isFirstResponder) {
+            self.passwordField.resignFirstResponder()
+        }
+    }
+    
     /// エラーを示すアラートを表示する.
     /// - Parameter title:   アラートのタイトル.
     /// - Parameter message: アラートのメッセージ.
@@ -69,3 +93,17 @@ class SignUpViewController: UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+extension SignUpViewController: UITextFieldDelegate {
+    /// 編集中に Return ボタンが押された時の処理.
+    /// - Parameter textField: Return ボタンが押された UITextField.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        // 次のタグ番号を持っている UITextField があればフォーカス.
+        let nextTag: Int = textField.tag + 1
+        if let nextTextField: UITextField = self.view.viewWithTag(nextTag) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        }
+        return true
+    }
+}

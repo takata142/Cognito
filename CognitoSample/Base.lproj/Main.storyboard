@@ -172,7 +172,7 @@
                                     <action selector="signUp:" destination="Xgo-2H-zNL" eventType="touchUpInside" id="X1j-RL-PiA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bah-g4-RAw">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bah-g4-RAw">
                                 <rect key="frame" x="16" y="369" width="382" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="usg-p9-eq8"/>
@@ -180,7 +180,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K65-Yy-fOJ">
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K65-Yy-fOJ">
                                 <rect key="frame" x="16" y="427" width="382" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Csm-pc-8fG"/>
