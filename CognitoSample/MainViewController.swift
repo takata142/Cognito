@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
                 // 「サインアウト」ボタン、ラベルを有効化して表示する.
                 self.signOutButton.isEnabled = true
                 self.signOutButton.isHidden = false
-                self.userLabel.text = user!.username! + "さんで\nサインインしています。"
+                self.userLabel.text = user!.username! + "さんが\nサインインしています。"
                 self.userLabel.isHidden = false
             }
             return nil
