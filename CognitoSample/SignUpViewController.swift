@@ -42,7 +42,6 @@ class SignUpViewController: UIViewController {
                 // ConfirmationViewController に値を渡す.
                 destination?.setUser(array[0]!)
                 destination?.sentTo = array[1]
-                destination?.setPassword(array[2]!)
             }
         }
     }
@@ -76,8 +75,7 @@ class SignUpViewController: UIViewController {
                         // ユーザがメールやSMSでの認証を必要とするかどうかで処理を分ける.
                         if (result.user.confirmedStatus != .confirmed) {
                             self.performSegue(withIdentifier: "ConfirmSignUp", sender: [username,
-                                                                                        result.codeDeliveryDetails?.destination,
-                                                                                        password])
+                                                                                        result.codeDeliveryDetails?.destination])
                         } else {
                             // 確認コード認証が不要な場合は NavigationView を閉じる.
                             self.dismiss(animated: true, completion: nil)

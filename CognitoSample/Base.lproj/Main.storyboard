@@ -316,7 +316,6 @@
                         <outlet property="confirmationCodeField" destination="pLd-Iw-OD3" id="x4a-sD-0T4"/>
                         <outlet property="indicatorView" destination="aar-AO-LIt" id="HOq-CR-I9S"/>
                         <outlet property="instructionLabel" destination="j3p-wK-VgR" id="2Bq-Oe-WsP"/>
-                        <outlet property="passwordField" destination="pLd-Iw-OD3" id="10r-qP-wRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQ8-FS-Yqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

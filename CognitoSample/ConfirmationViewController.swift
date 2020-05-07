@@ -23,8 +23,6 @@ class ConfirmationViewController: UIViewController {
     var username: String?
     /// SignUpViewController から渡される, 確認コードの送信先メールアドレス.
     var sentTo: String?
-    /// SignUpViewController から渡されるパスワード.
-    private var receivedPassword: String?
     
     /// view がメモリにロードされた後に呼ばれる.
     override func viewDidLoad() {
@@ -89,13 +87,6 @@ class ConfirmationViewController: UIViewController {
     func setUser(_ username: String) {
         // すでに設定されている場合は上書きしない.
         self.username = self.username ?? username
-    }
-    
-    /// パスワードを設定する.
-    /// - Parameter password: 設定するパスワード
-    func setPassword(_ password: String) {
-        // すでに設定されている場合は上書きしない.
-        self.receivedPassword = self.receivedPassword ?? password
     }
     
     /// エラーを示すアラートを表示する.
