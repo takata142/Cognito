@@ -46,6 +46,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="signInButton" destination="xhL-qD-g80" id="JXq-Kf-s6c"/>
                         <segue destination="CiF-pu-Diq" kind="presentation" identifier="SignIn" id="Rgf-HY-AiZ"/>
                     </connections>
                 </viewController>
