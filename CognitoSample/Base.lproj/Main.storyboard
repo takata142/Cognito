@@ -46,12 +46,28 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="2ph-Lk-jDg" kind="show" identifier="SignIn" id="dS5-lj-pY3"/>
+                        <segue destination="CiF-pu-Diq" kind="presentation" identifier="SignIn" id="Rgf-HY-AiZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tic-N3-VM3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="CiF-pu-Diq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Al0-l3-6zi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2ph-Lk-jDg" kind="relationship" relationship="rootViewController" id="Hzh-Hw-czf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGl-0S-RR5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="0.0"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="T7n-lu-uDt">
@@ -132,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IH-uv-LaP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="0.0"/>
+            <point key="canvasLocation" x="2000" y="0.0"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="bMK-bx-D2N">
@@ -212,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vm-1q-b2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000" y="0.0"/>
+            <point key="canvasLocation" x="3000" y="0.0"/>
         </scene>
         <!--Confirmation View Controller-->
         <scene sceneID="PKg-nb-ZJ3">
@@ -294,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQ8-FS-Yqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3000" y="0.0"/>
+            <point key="canvasLocation" x="4000" y="0.0"/>
         </scene>
     </scenes>
 </document>
