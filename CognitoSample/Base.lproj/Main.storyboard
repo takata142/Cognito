@@ -257,11 +257,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aar-AO-LIt">
+                                <rect key="frame" x="197" y="564" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Xls-ab-PiC" firstAttribute="trailing" secondItem="pLd-Iw-OD3" secondAttribute="trailing" constant="16" id="08p-IL-jQW"/>
                             <constraint firstItem="EtT-jB-ade" firstAttribute="top" secondItem="pLd-Iw-OD3" secondAttribute="bottom" constant="24" id="35Z-or-V4i"/>
+                            <constraint firstItem="aar-AO-LIt" firstAttribute="centerX" secondItem="bjG-Nh-zoQ" secondAttribute="centerX" id="5yS-iY-fPk"/>
                             <constraint firstItem="pLd-Iw-OD3" firstAttribute="top" secondItem="j3p-wK-VgR" secondAttribute="bottom" constant="20" id="7Ya-9l-Guw"/>
                             <constraint firstItem="j3p-wK-VgR" firstAttribute="top" secondItem="5Zd-Ij-bgS" secondAttribute="bottom" priority="950" constant="43" id="9UF-UN-WxB"/>
                             <constraint firstItem="5Zd-Ij-bgS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xls-ab-PiC" secondAttribute="leading" constant="20" id="EGm-Jd-lT8"/>
@@ -273,6 +277,7 @@
                             <constraint firstItem="EtT-jB-ade" firstAttribute="centerX" secondItem="bjG-Nh-zoQ" secondAttribute="centerX" id="RY7-bh-xMa"/>
                             <constraint firstItem="j3p-wK-VgR" firstAttribute="centerX" secondItem="bjG-Nh-zoQ" secondAttribute="centerX" id="TvG-im-oZr"/>
                             <constraint firstItem="5Zd-Ij-bgS" firstAttribute="width" secondItem="5Zd-Ij-bgS" secondAttribute="height" multiplier="163:29" id="X7x-ID-4IP"/>
+                            <constraint firstItem="aar-AO-LIt" firstAttribute="top" secondItem="EtT-jB-ade" secondAttribute="bottom" constant="20" id="cG4-bl-eZF"/>
                             <constraint firstItem="Xls-ab-PiC" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Zd-Ij-bgS" secondAttribute="trailing" constant="20" id="wOc-FB-NCb"/>
                             <constraint firstItem="pLd-Iw-OD3" firstAttribute="leading" secondItem="Xls-ab-PiC" secondAttribute="leading" constant="16" id="xDK-dq-WDN"/>
                         </constraints>
@@ -282,6 +287,7 @@
                     <connections>
                         <outlet property="confirmButton" destination="EtT-jB-ade" id="3gh-Dj-7oB"/>
                         <outlet property="confirmationCodeField" destination="pLd-Iw-OD3" id="x4a-sD-0T4"/>
+                        <outlet property="indicatorView" destination="aar-AO-LIt" id="HOq-CR-I9S"/>
                         <outlet property="instructionLabel" destination="j3p-wK-VgR" id="2Bq-Oe-WsP"/>
                         <outlet property="passwordField" destination="pLd-Iw-OD3" id="10r-qP-wRc"/>
                     </connections>

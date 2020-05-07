@@ -30,7 +30,7 @@ class ConfirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.sentTo != nil {
-            self.instructionLabel.text = "\(self.sentTo!)に送信される\n確認コードを入力してください。"
+            self.instructionLabel.text = "\(self.sentTo!)に\n送信される確認コードを\n入力してください。"
         }
         /// 画面タップ時の処理.
         let tapRecognizer: UITapGestureRecognizer
