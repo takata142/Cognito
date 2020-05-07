@@ -41,10 +41,22 @@
                                     <action selector="pushedSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Emb-qg-YXf"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPr-N8-vDF">
+                                <rect key="frame" x="51" y="412" width="312.5" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="fkW-Kd-96e"/>
+                                </constraints>
+                                <string key="text">Username さんが
+サインインしています。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="top" secondItem="U9K-Ix-ce3" secondAttribute="bottom" constant="80" id="3kK-RW-zSF"/>
+                            <constraint firstItem="lPr-N8-vDF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="45j-Ck-jDO"/>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8VX-e1-qPG"/>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpJ-qe-I2j"/>
                             <constraint firstItem="l7M-L4-xcL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0z-0F-Gbe"/>
@@ -52,12 +64,14 @@
                             <constraint firstItem="l7M-L4-xcL" firstAttribute="top" secondItem="xhL-qD-g80" secondAttribute="bottom" constant="80" id="Ukc-Wf-3Sc"/>
                             <constraint firstItem="U9K-Ix-ce3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xsq-D7-6Bg"/>
                             <constraint firstItem="U9K-Ix-ce3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YIB-bZ-BnN"/>
+                            <constraint firstItem="lPr-N8-vDF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s3d-5S-nW3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="xhL-qD-g80" id="JXq-Kf-s6c"/>
                         <outlet property="signOutButton" destination="l7M-L4-xcL" id="EhG-fS-maP"/>
+                        <outlet property="userLabel" destination="lPr-N8-vDF" id="Pkc-Y1-6Ux"/>
                         <segue destination="CiF-pu-Diq" kind="presentation" identifier="SignIn" id="Rgf-HY-AiZ"/>
                     </connections>
                 </viewController>

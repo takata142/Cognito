@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     /// 「サインアウト」ボタン.
     @IBOutlet weak var signOutButton: UIButton!
+    /// 「(Username) さんがサインインしています。」のラベル.
+    @IBOutlet weak var userLabel: UILabel!
     
     /// view がメモリにロードされた後に呼ばれる.
     override func viewDidLoad() {
@@ -34,9 +36,11 @@ class MainViewController: UIViewController {
                 // サインインしているときは「サインイン」ボタンを無効化して隠す.
                 self.signInButton.isEnabled = false
                 self.signInButton.isHidden = true
-                // 「サインアウト」ボタンを有効化して表示する.
+                // 「サインアウト」ボタン、ラベルを有効化して表示する.
                 self.signOutButton.isEnabled = true
                 self.signOutButton.isHidden = false
+                self.userLabel.text = user!.username! + "さんで\nサインインしています。"
+                self.userLabel.isHidden = false
             }
             return nil
         }.waitUntilFinished()
@@ -60,9 +64,10 @@ class MainViewController: UIViewController {
                 // 「サインイン」ボタンを有効化して表示する.
                 self.signInButton.isEnabled = true
                 self.signInButton.isHidden = false
-                // 「サインアウト」ボタンを無効化して隠す.
+                // 「サインアウト」ボタン、ラベルを無効化して隠す.
                 self.signOutButton.isEnabled = false
                 self.signOutButton.isHidden = true
+                self.userLabel.isHidden = true
         })
         let cancel: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alertController.addAction(signOut)
