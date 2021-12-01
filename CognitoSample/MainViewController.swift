@@ -2,14 +2,20 @@
 //  MainViewController.swift
 //  CognitoSample
 //
-//  Created by 岩田裕登 on 2020/03/22.
-//  Copyright © 2020 Yuto Iwata. All rights reserved.
 //
 
 import AWSCognitoIdentityProvider
 import UIKit
+import UserNotifications
 
-class MainViewController: UIViewController {
+//アクションの宣言
+enum ActionIdentifier: String{
+    case attend
+    case absent
+    case hold
+}
+
+class MainViewController: UIViewController,UNUserNotificationCenterDelegate{
     /// 「サインイン」ボタン.
     @IBOutlet weak var signInButton: UIButton!
     /// 「サインアウト」ボタン.
@@ -17,10 +23,19 @@ class MainViewController: UIViewController {
     /// 「(Username) さんがサインインしています。」のラベル.
     @IBOutlet weak var userLabel: UILabel!
     
+
+    @IBOutlet weak var timeNotification: UIButton!
+    
+
+    
     /// view がメモリにロードされた後に呼ばれる.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        
+        
+        
     }
     
     /// view が表示される直前に呼ばれる. バックグラウンド復帰、タブ切り替えなどでも呼ばれる.
@@ -39,6 +54,10 @@ class MainViewController: UIViewController {
                 // 「サインアウト」ボタン、ラベルを有効化して表示する.
                 self.signOutButton.isEnabled = true
                 self.signOutButton.isHidden = false
+                //通知ボタンを有効化して表示
+                self.timeNotification.isEnabled = true
+                self.timeNotification.isHidden = false
+                
                 self.userLabel.text = user!.username! + "さんが\nサインインしています。"
                 self.userLabel.isHidden = false
             }
@@ -68,11 +87,56 @@ class MainViewController: UIViewController {
                 self.signOutButton.isEnabled = false
                 self.signOutButton.isHidden = true
                 self.userLabel.isHidden = true
+                //通知ボタンを無効化して非表示
+                self.timeNotification.isEnabled = false
+                self.timeNotification.isHidden = true
+                
         })
         let cancel: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alertController.addAction(signOut)
         alertController.addAction(cancel)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+
+    
+    
+    
+    //通知ボタン押下
+    @IBAction func timeButton(_ sender: UIButton) {
+        
+        let attend = UNNotificationAction(identifier: ActionIdentifier.attend.rawValue, title: "出席", options: [])
+        let absent = UNNotificationAction(identifier: ActionIdentifier.absent.rawValue, title: "欠席", options: [])
+        let hold = UNNotificationAction(identifier: ActionIdentifier.hold.rawValue, title: "保留", options: [])
+        
+        let category = UNNotificationCategory(identifier: "message", actions: [attend,absent,hold], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        //UNUserNotificationCenter.current().delegate = self
+
+        
+        //通知の内容
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default
+        content.title = "出席確認"
+        content.subtitle = "サブタイトル"
+        content.body = "参加可否を教えてください。"
+        
+        content.categoryIdentifier = "message"
+        
+        //タイマーの時間をセット
+        let timer = 5
+        
+        //通知のリクエスト
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timer), repeats: false)
+        //let identifer = NSUUID().uuidString
+        let request = UNNotificationRequest(identifier:"fivesecond",
+                                            content:content,
+                                            trigger:trigger)
+        UNUserNotificationCenter.current().add(request,withCompletionHandler: nil)
+
+    }
+    
+
+    
 }
 

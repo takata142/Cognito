@@ -2,8 +2,6 @@
 //  Constants.swift
 //  CognitoSample
 //
-//  Created by 岩田裕登 on 2020/05/06.
-//  Copyright © 2020 Yuto Iwata. All rights reserved.
 //
 
 import AWSCognitoIdentityProvider
@@ -11,13 +9,13 @@ import AWSCognitoIdentityProvider
 struct CognitoConstants {
     // UserPool の各情報をもとにそれぞれの値を設定する.
     /// ユーザープールを設定しているリージョン.
-    static let IdentityUserPoolRegion: AWSRegionType = .Unknown
+    static let IdentityUserPoolRegion: AWSRegionType = .USEast1
     /// ユーザープールID.
-    static let IdentityUserPoolId: String = "YourIdentityUserPoolId"
+    static let IdentityUserPoolId: String = "us-east-1_6HxGhQeJ5"
     /// アプリクライアントID.
-    static let AppClientId: String = "YourAppClientId"
+    static let AppClientId: String = "1s5h24p1uv9ouu2sbl4p3o41kq"
     /// アプリクライアントのシークレットキー.
-    static let AppClientSecret: String? = nil
+    static let AppClientSecret: String? = "qcopgg8oua8fup6hj3mqoh1o5uhlavjc76s4b2ccpk025gj4os8"
     /// プロバイダキー. "UserPool" で良さそう.
     static let SignInProviderKey: String = "UserPool"
     

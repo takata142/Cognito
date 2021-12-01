@@ -2,12 +2,11 @@
 //  AppDelegate.swift
 //  CognitoSample
 //
-//  Created by 岩田裕登 on 2020/03/22.
-//  Copyright © 2020 Yuto Iwata. All rights reserved.
 //
 
 import AWSCognitoIdentityProvider
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,8 +31,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             userPoolConfiguration: userPoolConfigration,
                                             forKey: CognitoConstants.SignInProviderKey)
         
+        
+        //プッシュ通知の利用許可のリクエスト送信
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]){granted, error in
+            guard granted else { return }
+            
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+        
+        //通知許可の取得
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound],completionHandler:{(granted,error) in
+            if error != nil {
+                return
+            }
+            if granted{
+                UNUserNotificationCenter.current().delegate = self
+            }else{
+                print("認証されていません")
+            }
+        })
+        
+        
+        
+        
         return true
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -53,4 +79,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+//デバイストークンの取得
+extension AppDelegate{
+    func application(_ application:UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken:Data){
+        let token = deviceToken.map{String(format:"%.2hhx",$0)}.joined()
+        print("Device token: \(token)")
+    }
+    func application(_ applicatioin:UIApplication,
+                     didRegisterForRemoteNotificationsWithError error:Error){
+        print("ailed to register to APNs: \(error)")
+    }
+}
 
+// アプリが起動中それ以外でも通知が届く設定
+extension AppDelegate:UNUserNotificationCenterDelegate{
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler:@escaping(UNNotificationPresentationOptions)->Void) {
+        completionHandler([.alert,.sound])
+    }
+    
+    //アクション選択時に呼び出されるメソッド
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response:UNNotificationResponse,
+                                withCompletionHandler completionHandler:@escaping()-> Void) {
+        switch response.actionIdentifier{
+        case ActionIdentifier.attend.rawValue:
+            debugPrint("出席ボタンが押されました")
+            
+        case ActionIdentifier.absent.rawValue:
+            debugPrint("欠席ボタンが押されました")
+            
+        case ActionIdentifier.hold.rawValue:
+            debugPrint("保留が押されました")
+            
+        default:
+            ()
+        }
+        completionHandler()
+    }
+    
+    
+}

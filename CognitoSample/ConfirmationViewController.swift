@@ -2,8 +2,6 @@
 //  ConfirmationViewController.swift
 //  CognitoSample
 //
-//  Created by 岩田裕登 on 2020/05/07.
-//  Copyright © 2020 Yuto Iwata. All rights reserved.
 //
 
 import AWSCognitoIdentityProvider

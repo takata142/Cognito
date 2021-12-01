@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhL-qD-g80">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhL-qD-g80">
                                 <rect key="frame" x="106" y="418" width="202" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="サインイン"/>
@@ -33,7 +34,7 @@
                                     <action selector="pushedSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vN1-7z-oqe"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7M-L4-xcL">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7M-L4-xcL">
                                 <rect key="frame" x="86" y="558" width="242" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="サインアウト"/>
@@ -42,35 +43,47 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPr-N8-vDF">
-                                <rect key="frame" x="51" y="412" width="312.5" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="fkW-Kd-96e"/>
-                                </constraints>
+                                <rect key="frame" x="51" y="478" width="312.5" height="67"/>
                                 <string key="text">Username さんが
 サインインしています。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LM-VF-x2s">
+                                <rect key="frame" x="169.5" y="694" width="75" height="44"/>
+                                <color key="backgroundColor" red="0.1196160688" green="0.78039215689999997" blue="0.7582937891" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="通知">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="timeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CVK-XK-xwh"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lPr-N8-vDF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3iT-Pu-fLC"/>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="top" secondItem="U9K-Ix-ce3" secondAttribute="bottom" constant="80" id="3kK-RW-zSF"/>
-                            <constraint firstItem="lPr-N8-vDF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="45j-Ck-jDO"/>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8VX-e1-qPG"/>
                             <constraint firstItem="xhL-qD-g80" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HpJ-qe-I2j"/>
                             <constraint firstItem="l7M-L4-xcL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0z-0F-Gbe"/>
+                            <constraint firstItem="lPr-N8-vDF" firstAttribute="top" secondItem="xhL-qD-g80" secondAttribute="bottom" id="PCw-Av-CgB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U9K-Ix-ce3" secondAttribute="trailing" constant="20" id="PWx-GR-hWJ"/>
+                            <constraint firstItem="0LM-VF-x2s" firstAttribute="top" secondItem="l7M-L4-xcL" secondAttribute="bottom" constant="76" id="T6w-rS-GJc"/>
                             <constraint firstItem="l7M-L4-xcL" firstAttribute="top" secondItem="xhL-qD-g80" secondAttribute="bottom" constant="80" id="Ukc-Wf-3Sc"/>
                             <constraint firstItem="U9K-Ix-ce3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xsq-D7-6Bg"/>
                             <constraint firstItem="U9K-Ix-ce3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YIB-bZ-BnN"/>
-                            <constraint firstItem="lPr-N8-vDF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s3d-5S-nW3"/>
+                            <constraint firstItem="0LM-VF-x2s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iZe-4M-Ccr"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="xhL-qD-g80" id="JXq-Kf-s6c"/>
                         <outlet property="signOutButton" destination="l7M-L4-xcL" id="EhG-fS-maP"/>
+                        <outlet property="timeNotification" destination="0LM-VF-x2s" id="i13-GQ-Q4x"/>
                         <outlet property="userLabel" destination="lPr-N8-vDF" id="Pkc-Y1-6Ux"/>
                         <segue destination="CiF-pu-Diq" kind="presentation" identifier="SignIn" id="Rgf-HY-AiZ"/>
                     </connections>
@@ -109,7 +122,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-QB-Hbd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22A-QB-Hbd">
                                 <rect key="frame" x="126" y="493" width="162" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="サインイン"/>
@@ -133,7 +146,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRV-1w-Dna">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRV-1w-Dna">
                                 <rect key="frame" x="48.5" y="564" width="317" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="新しいアカウントを作成する"/>
@@ -145,7 +158,8 @@
                                 <rect key="frame" x="308" y="508.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="60F-QY-kpd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XpN-AO-QxS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="60F-QY-kpd" secondAttribute="leading" constant="20" id="1xX-6v-dLG"/>
                             <constraint firstItem="rMz-7T-8es" firstAttribute="centerY" secondItem="22A-QB-Hbd" secondAttribute="centerY" id="2uv-Vr-HVg"/>
@@ -167,7 +181,6 @@
                             <constraint firstItem="60F-QY-kpd" firstAttribute="trailing" secondItem="aKF-aC-h9c" secondAttribute="trailing" constant="16" id="ocr-AG-olF"/>
                             <constraint firstItem="60F-QY-kpd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XpN-AO-QxS" secondAttribute="trailing" constant="20" id="seM-aw-uW4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="60F-QY-kpd"/>
                     </view>
                     <navigationItem key="navigationItem" title="サインイン" id="ULt-mr-2xS"/>
                     <connections>
@@ -195,7 +208,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2A-xb-oJe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2A-xb-oJe">
                                 <rect key="frame" x="93.5" y="493" width="227" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="アカウント作成"/>
@@ -231,7 +244,8 @@
                                 <rect key="frame" x="197" y="564" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kXT-EL-fcD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wNx-33-ypB" firstAttribute="top" secondItem="O2A-xb-oJe" secondAttribute="bottom" constant="20" id="3T0-Nl-1ox"/>
                             <constraint firstItem="Bah-g4-RAw" firstAttribute="trailing" secondItem="gs6-Kd-Jns" secondAttribute="trailing" id="A8t-M1-JrU"/>
@@ -252,7 +266,6 @@
                             <constraint firstItem="K65-Yy-fOJ" firstAttribute="top" secondItem="Bah-g4-RAw" secondAttribute="bottom" constant="16" id="y9f-b1-Zay"/>
                             <constraint firstItem="O2A-xb-oJe" firstAttribute="centerX" secondItem="PiY-r4-MAC" secondAttribute="centerX" id="zxM-gT-Z70"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kXT-EL-fcD"/>
                     </view>
                     <navigationItem key="navigationItem" title="新規アカウント" id="jRw-jR-GoO"/>
                     <connections>
@@ -281,7 +294,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtT-jB-ade">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtT-jB-ade">
                                 <rect key="frame" x="77.5" y="493" width="259" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="確認コードで認証"/>
@@ -313,7 +326,8 @@
                                 <rect key="frame" x="197" y="564" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xls-ab-PiC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Xls-ab-PiC" firstAttribute="trailing" secondItem="pLd-Iw-OD3" secondAttribute="trailing" constant="16" id="08p-IL-jQW"/>
                             <constraint firstItem="EtT-jB-ade" firstAttribute="top" secondItem="pLd-Iw-OD3" secondAttribute="bottom" constant="24" id="35Z-or-V4i"/>
@@ -333,7 +347,6 @@
                             <constraint firstItem="Xls-ab-PiC" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Zd-Ij-bgS" secondAttribute="trailing" constant="20" id="wOc-FB-NCb"/>
                             <constraint firstItem="pLd-Iw-OD3" firstAttribute="leading" secondItem="Xls-ab-PiC" secondAttribute="leading" constant="16" id="xDK-dq-WDN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xls-ab-PiC"/>
                     </view>
                     <navigationItem key="navigationItem" title="確認コード" id="ZV2-Fr-qFg"/>
                     <connections>
@@ -347,4 +360,9 @@
             <point key="canvasLocation" x="4000" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
