@@ -133,7 +133,6 @@ class MainViewController: UIViewController,UNUserNotificationCenterDelegate{
                                             content:content,
                                             trigger:trigger)
         UNUserNotificationCenter.current().add(request,withCompletionHandler: nil)
-
     }
     
 
